@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type='text/javascript'>//<![CDATA[ 
+window.onload=function(){
+    canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    canvas.x = 150;
+    canvas.y = 150;
+    var w = 200, h = 200;
+    context.shadowOffsetX = 4.0;
+    context.shadowOffsetY = 4.0;
+    context.lineWidth = 10.0;
+    context.fillStyle = "#E8170C";
+    var d = Math.min(w, h);
+    var k = 120;
+    context.moveTo(k, k + d / 4);
+    context.quadraticCurveTo(k, k, k + d / 4, k);
+    context.quadraticCurveTo(k + d / 2, k, k + d / 2, k + d / 4);
+    context.quadraticCurveTo(k + d / 2, k, k + d * 3/4, k);
+    context.quadraticCurveTo(k + d, k, k + d, k + d / 4);
+    context.quadraticCurveTo(k + d, k + d / 2, k + d * 3/4, k + d * 3/4);
+    context.lineTo(k + d / 2, k + d);
+    context.lineTo(k + d / 4, k + d * 3/4);
+    context.quadraticCurveTo(k, k + d / 2, k, k + d / 4);
+    context.fill();
+}//]]>  
+</script>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400" x="50" y="30"></canvas>
+ <audio src="music/heartbeat.mp3" controls>
+</audio>
+</body>
+</html>
